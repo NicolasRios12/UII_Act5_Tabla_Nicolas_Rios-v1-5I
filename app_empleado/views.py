@@ -1,5 +1,9 @@
 from django.shortcuts import render
 
+from .models import Empleado
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+
+    Empleados = Empleado.objects.all()
+    
+    return render(request, 'index.html', {'Empleados': Empleados})
